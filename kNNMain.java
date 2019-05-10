@@ -33,12 +33,12 @@ public class kNNMain
     // and make a print a predicted target label
 			KNNClassifier near = new KNNClassifier(9);
 			DataPoint dp = testset.get(1);
-			DataPoint[] closest = KNNClassifier.getNearestNeighbors(trainset, dp);
+			DataPoint[] closest = near.getNearestNeighbors(trainset, dp);
 			
-			int a = KNNClassifier.getIndexOfLargest(closest);
+			System.out.println(Arrays.toString(closest));
 			
-			DataPoint guessdp = testset.get(a);
-			String prediction = KNNClassifier.predict(ds, guessdp);
+			String prediction = KNNClassifier.predict(trainset, dp);
+			System.out.println(prediction); 
 
 
     // TASK 6: loop over the datapoints in the held out test set, and make predictions for Each
