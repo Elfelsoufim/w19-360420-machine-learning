@@ -255,7 +255,7 @@ public class DataSet {
 		double[] endArray = end.getX(); 
 		double distance = 0;
 		
-		for (int i=0; i < start.size; i++)
+		for (int i=0; i < startArray.length; i++)
 		{
 			distance+= Math.sqrt( Math.pow( startArray[i], 2) - Math.pow( endArray[i], 2) );
 		}
