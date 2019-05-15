@@ -3,7 +3,8 @@
 ## Elfelsoufi Mohamed Amine
 
 ### Distributions of Model Accuracy
-Every time we run the model, the datapoints that are taken from the whole data point list (to make the test set and the training set) are random. Furthermore,these data points are shuffled and placed randomly. This does that the neighbors with which we compare the test datapoint (that we are trying to predict its label) are always different. The smaller the number of neighbors at which we look, the more there is chance that we will look at a homogenous set of points, which can falsifie the prediction (ie. the closest neighbor can be in fact very far compared to the other datapoint that are not neighbors and that we don't look at).
+
+Every time we run the model, the datapoints that are taken from the whole datapoint list (to make the test set and the training set) are random. Furthermore, these data points are shuffled and placed randomly. This does that the neighbors with which we compare the test datapoint (that we are trying to predict its label) are always different. The smaller the number of neighbors at which we look, the more there is chance that we will look at a homogenous set of points, which can falsifie the prediction (ie. the closest neighbor can be in fact very far compared to the other datapoint that are not neighbors and that we don't look at).
 
 
 
@@ -16,9 +17,9 @@ A False Negative is a specimen that our model predicted to be an irrelevant elem
 
 A False Positive is a specimen that was predicted to be relevant (i.e sick) while in fact he is irrelevant (not sick). 
 
-These two categories are directly linked to accuracy. The larger the number of specimens in this two categories, the less accurate the model is.
+These two categories are directly linked to accuracy. The larger the number of specimens in this two last categories, the less accurate the model is.
 
-
+#### Precision and Recall
 
 Precision and recall are two different kinds of accuracy.
 
@@ -26,8 +27,10 @@ Precision is the accuracy of the model to predict and select relevant models. Th
 
 Recall is the accuracy of the model to predict and select all the relevant models. The higher the recall, the better the model is at spotting/detecting a relevant specimen and selecting it. (i.e it is better at diagnosis and spotting when someone is sick).
 
-Precision means the certainty that the selected specimens are relevant. Recall means the ability to detect and select all the relevant specimen in the dataset. Precision can be increase by selecting less specimens (less chance to make a mistake). Recall is much more relevant in term of accuracy (cannot be influenced by the size of the dataset/population).
+Precision means the certainty that the selected specimens are relevant. Recall means the ability to detect and select all the relevant specimen in the dataset. Recall can be increased by selecting more specimens into the relevant zone, regardless of the precision change. It can be increased by a decrease in precision (the model will put more specimen in the relevant zone). Precision is much more relevant in term of accuracy (cannot be influenced by the size of the population).
 
 #### K parameter
-The k parameter means the number of neighbors we look at to make the prediction. A bigger k yields more precision, because there is more chance that the closest neighbor is present in the "neighborhood" that we look at. Smaller k yields the opposite result.
+
+The k parameter means the number of neighbors we look at to make the prediction. A bigger k yields more precision, because there is more chance that the closest neighbor is present in the "neighborhood" that we look at (for the classification). Smaller k yields the opposite result. 
+
 Similarly, a higher k yields a better recall. The specimens have a higher chance to be put in the right category (or prediction or label) because there is a higher chance the neighbor with the right label (closest) will be present in the sample neighborhood that we look at for our predictions.
